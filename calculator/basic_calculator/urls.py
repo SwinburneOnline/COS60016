@@ -9,4 +9,3 @@ urlpatterns = [
     path('div/', DivView.as_view()),
     path('multi/', MultiView.as_view()),
 ]
-

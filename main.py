@@ -1,16 +1,21 @@
-# This is a sample Python script.
+from operator import pow, truediv, mul, add, sub
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+operators = {
+    '+': add,
+    '-': sub,
+    '*': mul,
+    '/': truediv
+}
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def calculate(s):
+    if s.isdigit():
+        return float(s)
+    for c in operators.keys():
+        left, operator, right = s.partition(c)
+        if operator in operators:
+            return operators[operator](calculate(left), calculate(right))
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+calc = input("Type calculation:\n")
+print("Answer: " + str(calculate(calc)))

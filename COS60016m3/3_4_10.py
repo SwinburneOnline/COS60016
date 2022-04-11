@@ -1,8 +1,10 @@
 import requests
+
+#head()
 r = requests.head('https://jsonplaceholder.typicode.com/posts/1')
 print(r.headers)
 
-
+#put()
 url = 'https://jsonplaceholder.typicode.com/posts/1'
 myobj = {
     'title': 'Inserted through requests library',
@@ -13,7 +15,7 @@ myobj = {
 x = requests.put(url, data = myobj)
 print(x.text)
 
-
+#delete()
 r = requests.delete('https://jsonplaceholder.typicode.com/posts/1')
 print(r.text)
 

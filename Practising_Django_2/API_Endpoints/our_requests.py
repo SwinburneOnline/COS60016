@@ -39,11 +39,11 @@ print(response.text)
 patch_data = '{"updates":"Some new Stuff"}'
 response = requests.patch(url='http://127.0.0.1:8000/our_endpoints/update_file/', data=patch_data)
 
-print(response.text)
+print(response.status_code)
 
 
 #TEST from
 response = requests.get(url='http://127.0.0.1:8000/our_endpoints/check_connection')
-print(response.check_connection)
+print(response.status_code)
 #TEST to
 
